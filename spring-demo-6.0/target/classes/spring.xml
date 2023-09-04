@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.qingmin.bean.Plan" name="plan"/>
+
+    <bean class="com.qingmin.fanli.ChineseTeacher" name="chineseTeacher"/>
+    <bean class="com.qingmin.fanli.ArtTeacher" name="artTeacher"/>
+    <bean class="com.qingmin.fanli.Student" name="student">
+        <property name="teacher" ref="chineseTeacher"/>
+    </bean>
+
+    <bean name="studentName" class="com.qingmin.fanli.Student">
+        <property name="name" value="卢本伟"/>
+    </bean>
+
+</beans>
