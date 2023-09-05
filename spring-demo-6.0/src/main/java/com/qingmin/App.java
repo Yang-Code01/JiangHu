@@ -1,6 +1,7 @@
 package com.qingmin;
 
 import com.qingmin.bean.*;
+import com.qingmin.component.TaskComponent;
 import com.qingmin.config.BeanConfig;
 import com.qingmin.fanli.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,7 @@ public class App {
 
         testAsync();
         tesk();
+        taskListener();
 
     }
 
@@ -74,6 +76,13 @@ public class App {
     @Scheduled(fixedDelay = 200) // 单位依然是毫秒，这里是每两秒钟打印一次
     public static void tesk() {
         System.out.println("定时任务 ： " + new Date());
+    }
+
+
+    public static void taskListener() {
+        TaskComponent taskComponent = context.getBean(TaskComponent.class);
+
+
     }
 
 

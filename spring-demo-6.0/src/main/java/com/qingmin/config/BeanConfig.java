@@ -19,6 +19,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan("com.qingmin")  //包扫描，这样Spring就会去扫描对应包下所有的类
 @EnableAsync // Spring异步任务支持
 @EnableScheduling // 定时任务支持
+@PropertySource({"classpath:application-default.yml","classpath:test.properties"})
 public class BeanConfig {
 
     // Spring在扫描对应包下所有的类时，
